@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="copyright" content="Shankar Lamichhane" />
+	<meta name="author" content="Shankar Lamichhane" />
+	<meta name="contact" content="shankarlmc012@gmail.com" />
+	<meta name="description" content="Loading animation using css">
+	<link rel="canonical" href="https://shankarlamichhane.com.np/">
+	<title>Happy New Year 2078</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="loading">
+		<img src="nepali_flag.gif" alt="Nepali flag">
+		<h2>2077</h2>
+		<div class="bar"></div>
+		<h2>2078</h2>
+	</div>
+	<div class="fireworks" id="sec1"></div>
+	<section>
+		<h1>Happy New Year <br><span>2078</span></h1>
+	</section>
+	<script>
+		function stars(){
+			const count = 200;
+			const section = document.querySelector('section');
+			var i = 0;
+			while (i < count){
+				const star = document.createElement('i');
+				const x = Math.floor(Math.random() * window.innerWidth)
+				const y = Math.floor(Math.random() * window.innerHeight)
+				const size = Math.random() * 4;
+				star.style.left = x+'px';
+				star.style.top = y+'px';
+				star.style.width = 1+size+'px';
+				star.style.height = 1+size+'px';
+				
+				const duration = Math.random() * 4;
+
+				star.style.animationDuration = 2+duration+'s';
+				star.style.animationDelay = duration+'s';
+
+				section.appendChild(star);
+				i++;
+			}
+		}
+		stars()
+	</script>
+	<script src="http://code.jquery.com/jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="jquery.fireworks.js"></script>
+	<script type="text/javascript">
+		$('.fireworks').fireworks({ 
+		  sound: true, // sound effect
+		  opacity: 9, 
+		  width: '100%', 
+		  height: '100%'
+		});
+	</script>
+</body>
+</html>
